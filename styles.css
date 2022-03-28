@@ -1,0 +1,500 @@
+:root {
+	
+	--popcolourHS: 170,30%;
+	--bgcolourHS: 0,0%;
+
+	/* colours  */
+	--background: hsl(var(--popcolourHS), 70%);
+	--text: hsl(var(--bgcolourHS), 10%);
+	--edges: 2px -2px 4px -3px hsl(var(--bgcolourHS), 20%);
+	--shadow: rgba(0, 0, 0, 0.25);
+	
+	--links: hsl(var(--bgcolourHS), 30%);
+	--hover: hsl(var(--bgcolourHS), 50%);
+	--hoverpop: hsl(var(--popcolourHS), 50%);
+	
+	--header: hsl(var(--bgcolourHS), 100%);
+	--intro: hsl(var(--bgcolourHS), 95%);
+	--stuff: hsl(var(--bgcolourHS), 90%);
+	--contact: hsl(var(--bgcolourHS), 85%);
+	
+	--headerpop: hsl(var(--popcolourHS), 90%);
+	--intropop: hsl(var(--popcolourHS), 80%);
+	--stuffpop: hsl(var(--popcolourHS), 70%);
+	--contactpop: hsl(var(--popcolourHS), 60%);
+	
+	--scrollbg: hsl(var(--bgcolourHS), 85%);
+	--scrollbar: hsl(var(--bgcolourHS), 75%);
+	--scrollhover: hsl(var(--bgcolourHS), 70%);
+	
+	--b2top: hsl(var(--popcolourHS), 60%);
+
+	/* scaling */
+	--tabheight: clamp(40px, 8vw, 60px);
+	--border-radii: 0.4rem;
+	
+	/* fonts */
+	--normal: 400;
+	--heavy: 600;	
+
+    --h0: clamp(1.8rem, 6.5vmin, 2.5rem);
+    --h1: clamp(1.5rem, 6vmin, 2rem);
+    --h2: clamp(1.3rem, 5.5vmin, 1.75rem);
+    --h3: clamp(1.1rem, 5vmin, 1.5rem);
+    --p: clamp(0.8rem, 4.5vmin, 1.0rem);
+    --gap: clamp(0.5rem, 3vmin, 0.7rem);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+	/* Dark */ /* old
+	--background: hsl(200, 15%, 30%);
+	--text: hsl(200, 15%, 90%);
+	--edges: 2px 2px 4px -3px hsl(200, 15%, 80%) inset;
+	--shadow: rgba(255, 255, 255, 0.5);
+	
+	--links: hsl(200, 15%, 90%);
+	--hover: hsl(200, 15%, 70%);
+	
+	--header: hsl(200, 15%, 5%);
+	--intro: hsl(200, 15%, 10%);
+	--stuff: hsl(200, 15%, 15%);
+	--contact: hsl(200, 15%, 20%);
+	
+	--scrollbg: hsl(200, 15%, 15%);
+	--scrollbar: hsl(200, 15%, 25%);
+	--scrollhover: hsl(200, 15%, 30%);
+	
+	--b2top: hsl(200, 15%, 25%); */
+	
+	/* Dark */
+	--background: hsl(var(--popcolourHS), 30%);
+	--text: hsl(var(--bgcolourHS), 90%);
+	--edges: 2px 2px 4px -3px hsl(var(--bgcolourHS), 80%) inset;
+	--shadow: rgba(255, 255, 255, 0.5);
+	
+	--links: hsl(var(--bgcolourHS), 90%);
+	--hover: hsl(var(--bgcolourHS), 70%);
+	--hoverpop: hsl(var(--popcolourHS), 50%);
+	
+	--header: hsl(var(--bgcolourHS), 0%);
+	--intro: hsl(var(--bgcolourHS), 15%);
+	--stuff: hsl(var(--bgcolourHS), 25%);
+	--contact: hsl(var(--bgcolourHS), 35%);
+	
+	--headerpop: hsl(var(--popcolourHS), 10%);
+	--intropop: hsl(var(--popcolourHS), 20%);
+	--stuffpop: hsl(var(--popcolourHS), 30%);
+	--contactpop: hsl(var(--popcolourHS), 40%);
+	
+	--scrollbg: hsl(var(--bgcolourHS), 30%);
+	--scrollbar: hsl(var(--bgcolourHS), 40%);
+	--scrollhover: hsl(var(--bgcolourHS), 50%);
+	
+	--b2top: hsl(var(--popcolourHS), 40%);
+	
+	/* fonts */
+	--normal: 300;
+	--heavy: 500;	
+    }
+}
+
+/* karla - variable */
+@font-face {
+  font-family: 'Karla';
+  font-weight: 200 800;
+  font-display: swap;
+  src:
+    url('fonts/karla.woff2') format('woff2 supports variations'),
+    url('fonts/karla.woff2') format('woff2-variations');
+}
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	
+    margin-block-start: 0;
+    margin-block-end: 0;
+	
+	box-sizing: border-box;
+	
+/*	outline: 1px dashed; */
+}
+
+html {
+	scroll-behavior: smooth;
+	font-family: 'Karla', sans-serif;
+}
+			
+body {
+	color: var(--text);
+	background-color: var(--background);
+}
+
+a {
+	color: var(--links);
+	text-decoration: none;
+}
+a:not(#topstrip a, section h2 a, .img, .thumb a) {
+    border-bottom: 1px solid var(--sopranopop);
+}
+a:hover, a:active {
+	color: var(--hoverpop);
+}
+a:not(#topstrip a, section h2 a, .img, .thumb a, .backtotop):hover {
+    border-bottom: 1px solid var(--hover);
+}
+a:focus-visible, button:focus-visible {
+	outline: 0.1rem dashed var(--hoverpop);
+	outline-offset: 0.25rem;
+	border-radius: var(--border-radii);
+}
+
+
+header {
+	top: 5px;
+	z-index: 0;
+	width: calc(100% - 18px);
+	height: calc(100vh - 5px);
+	background-color: var(--header);
+	overflow: hidden;
+}
+
+#topstrip {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+    padding: 0 clamp(0.75rem, 4vw, 1.5rem);
+	margin: 0 auto;
+	z-index: 5;
+}
+
+#name, nav, h2, h3 {
+	font-weight: 300;
+}
+
+#name {
+	font-size: clamp(1rem, 2vw + 0.75rem, 2.2rem);
+	line-height: calc(var(--tabheight) + 5px);
+}
+
+nav {
+	font-size: clamp(0.9rem, 2vw + 0.6rem, 1.8rem);
+	line-height: calc(var(--tabheight) + 5px);
+	text-align: right;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin: 0 0.5vw;
+}
+
+header p {
+	text-align: center;
+	margin: 2rem 1rem;
+}
+
+#hero {
+	width: 90%;
+	height: 90%;
+	max-height: calc(100% - 6rem);
+	position: relative;
+	margin: 0 auto;
+	font-size: clamp(5px, 2.2vw, 18px);
+}
+
+
+
+#hero div:hover, #hero div:hover::before, #hero div:hover::after {
+  opacity: 0.5;
+  transition: opacity ease 0.5s, box-shadow ease 0.5s;
+  box-shadow: 0 0 5px var(--text) inset;
+}
+#hero div {
+  transition: opacity ease 0.5s, box-shadow ease 0.5s;
+}
+
+
+.scrollup {
+	position: absolute;
+	bottom: calc(var(--tabheight) + 5px);
+	left: calc(50% - 1.5rem);
+	height: 2rem;
+	width: 3rem;
+	opacity: 0;
+	animation: fadeIn 15s ease;
+	z-index: 4;
+}
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0.25;
+	}
+	2.5%{
+		opacity: 1;
+	}
+	10%{
+		opacity: 0.25;
+	}
+	12.5%{
+		opacity: 1;
+	}
+	20%{
+		opacity: 0.25;
+	}
+	22.5%{
+		opacity: 1;
+	}
+	30%{
+		opacity: 0.25;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+section, header {
+	margin: 0 auto;
+	position: sticky;
+	border-top-left-radius: var(--border-radii);
+	border-top-right-radius: var(--border-radii);
+/*	box-shadow: var(--edges); */
+}
+section {
+	padding: 0 3vw;
+}
+.anchor {position:absolute}
+
+section h2 {
+	display: block;
+	position: absolute;
+	top: calc(-1 * var(--tabheight));
+	height: calc(var(--tabheight) + 3px);
+	line-height: var(--tabheight);
+	width: 22%;
+	font-size: clamp(0.8rem, 5vw, 2.2rem);
+	text-transform: uppercase;
+	text-align: center;
+	border-top-left-radius: var(--border-radii);
+	border-top-right-radius: var(--border-radii);
+/*	box-shadow: var(--edges); */
+}
+section h2 a { display: block; width: 100% }
+
+article {
+	position: relative;
+	top: 3vw;
+	font-weight: var(--normal);
+	font-size: clamp(0.8rem, 2vw + 0.5rem, 1.2rem);
+	line-height: clamp(0.75rem, 2vw + 1rem, 1.75rem);
+	max-width: 50rem;
+	height: calc(100vh - (2.5 * var(--tabheight)) - 3vw);
+	padding: 0.5rem;
+	margin: 0 auto;
+	overflow: auto;
+}
+
+.subdivision {
+	margin-bottom: 3.5vw;
+}
+
+article p, article ul, article h3 {
+	padding: 0.5rem 0;
+}
+
+article h3 {
+	font-size: clamp(1.1rem, 3vw + 0.5rem, 2rem);
+}
+
+img {
+	max-width: 100%;
+	max-height: 40vh;
+	display: inline-block;
+}
+img:not(.social, .logo) {
+	border-radius: var(--border-radii);
+}
+
+.backtotop {
+	position: absolute;
+	height: 2.5rem;
+	width: 2.5rem;
+	bottom: 1rem;
+	left: calc(50% - 1.5rem);
+	text-align: center;
+	border-radius: 50%;
+	background-color: var(--b2top);
+}
+.backtotop img {
+	height: 2rem;
+	width: 1.5rem;
+}
+.backtotop:hover, .backtotop:focus {
+	background-color: var(--hoverpop);
+	border-radius: 50%;
+}
+
+#intro {
+	z-index: 6;
+	width: calc(100% - 14px);
+	background-color: var(--intro);
+	height: calc(100vh - 9px - var(--tabheight));
+	top: calc(var(--tabheight) + 9px);
+}
+#gointro {top: calc(100vh - 10px - var(--tabheight))}
+#intro h2 {
+	right: 39%;
+	background-color: var(--intro);
+}
+.welcome {
+	display: flex;
+	justify-content: space-between;
+}
+.welcome .blurb {
+	flex: 3;
+}
+.welcome img {
+	height: 50vmin;
+	min-height: 122.5px;
+	margin: 0 auto;
+}
+.signoff {
+	text-align: right;
+}
+
+#stuff {
+	z-index: 7;
+	width: calc(100% - 10px);
+	background-color: var(--stuff);
+	height: calc(100vh - 12px - var(--tabheight));
+	top: calc(var(--tabheight) + 12px);
+}
+#gostuff {top: calc(200vh - 22px - (2 * var(--tabheight)))}
+#stuff h2 {
+	right: 19.5%;
+	background-color: var(--stuff);
+}
+.portfolio, .stack {
+	margin: 1rem 0 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+.portfolio {
+	gap: 3vw;
+}
+.thumb {
+	min-width: 120px;
+	max-width: 360px;
+	max-height: 40vh;
+	position: relative;
+}
+.thumb:hover {
+	transform: translate(1px, 1px);
+}
+.thumb p {
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+    color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 3rem;
+	font-size: var(--h1);
+    font-weight: var(--heavy);
+    background-color: var(--hoverpop);
+	opacity: 0.9;
+}
+.thumb:hover p {opacity:1}
+
+.stack {
+	flex-wrap: wrap;
+	gap: clamp(0.5rem, 1vw, 1rem);
+}
+.logo {
+	height: calc(2.5rem + 1.5vw);
+	max-width: 4rem;
+	/* filter: drop-shadow(0 0 3px hsla(var(--bgcolourHS), 85%, 0.75)); */
+}
+
+.flex-break {
+	display: none;
+	flex-basis: 100%;
+	width: 0;
+	height: 0;
+}
+
+#contact {
+	z-index: 8;
+	width: calc(100% - 6px);
+	border-top-right-radius: 0;
+	background-color: var(--contact);
+	height: calc(100vh - 16px - var(--tabheight));
+	top: calc(var(--tabheight) + 16px);
+}
+#gocontact {top: calc(300vh - 42px - (3 * var(--tabheight)))}
+#contact h2 {
+	right: 0;
+	background-color: var(--contact);
+}
+#contact article ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height:  calc(100% - 3rem);
+	list-style-type: none;
+}
+#contact article ul li {
+	width: fit-content;
+	text-align: center;
+}
+.social {
+	height: clamp(2rem, 5vw + 1.5rem, 4rem);
+	width: auto;
+	opacity: 0.75;
+}
+.social:hover {
+	transform: translate(1px, 1px);
+	opacity: 0.5;
+}
+
+article::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+article::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+article::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: var(--border-radii);
+}
+
+article::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollhover); 
+}
+
+@media (prefers-color-scheme: dark) {
+	.scrollup, [title="PHP"], [title="MySQL"], [title="PowerShell"], .social, .backtotop img  {
+		filter: invert(100%);	
+	}
+}
+
+@media (max-aspect-ratio: 1/1) {
+	.flex-break {
+		display: block;
+	}
+	.welcome, #contact article ul {
+		flex-direction: column-reverse;
+	}
+	#contact article ul {
+		flex-direction: column;
+	}
+  }
