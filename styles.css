@@ -47,25 +47,6 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-	/* Dark */ /* old
-	--background: hsl(200, 15%, 30%);
-	--text: hsl(200, 15%, 90%);
-	--edges: 2px 2px 4px -3px hsl(200, 15%, 80%) inset;
-	--shadow: rgba(255, 255, 255, 0.5);
-	
-	--links: hsl(200, 15%, 90%);
-	--hover: hsl(200, 15%, 70%);
-	
-	--header: hsl(200, 15%, 5%);
-	--intro: hsl(200, 15%, 10%);
-	--stuff: hsl(200, 15%, 15%);
-	--contact: hsl(200, 15%, 20%);
-	
-	--scrollbg: hsl(200, 15%, 15%);
-	--scrollbar: hsl(200, 15%, 25%);
-	--scrollhover: hsl(200, 15%, 30%);
-	
-	--b2top: hsl(200, 15%, 25%); */
 	
 	/* Dark */
 	--background: hsl(var(--popcolourHS), 30%);
@@ -97,16 +78,6 @@
 	--normal: 300;
 	--heavy: 500;	
     }
-}
-
-/* karla - variable */
-@font-face {
-  font-family: 'Karla';
-  font-weight: 200 800;
-  font-display: swap;
-  src:
-    url('fonts/karla.woff2') format('woff2 supports variations'),
-    url('fonts/karla.woff2') format('woff2-variations');
 }
 
 * {
