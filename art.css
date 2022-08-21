@@ -1,4 +1,4 @@
-:root {
+html {
 	
   --popcolourHS: 170,30%;
 
@@ -10,15 +10,14 @@
   
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-		/* colours dark */
-	  --lighter: hsl(var(--popcolourHS), 0%);
-	  --light: hsl(var(--popcolourHS), 15%);
-	  --lightmed: hsl(var(--popcolourHS), 25%);
-	  --medium: hsl(var(--popcolourHS), 35%);
-    }
+html.dark-mode {
+  /* colours dark */
+  --lighter: hsl(var(--popcolourHS), 0%);
+  --light: hsl(var(--popcolourHS), 15%);
+  --lightmed: hsl(var(--popcolourHS), 25%);
+  --medium: hsl(var(--popcolourHS), 35%);
 }
+    
 
 .heart {
   position: absolute;

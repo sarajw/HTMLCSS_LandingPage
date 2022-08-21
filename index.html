@@ -6,6 +6,7 @@
 	<title>sara j. wallén</title>
 	<meta name="description" content="Sara's Landing Page">
 	<meta name="viewport" content="width=device-width, initial-scale=1.00">
+	<meta name="color-scheme" content="light dark">
 	<style>
 		/* karla - variable */
 		@font-face {
@@ -23,9 +24,12 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
+	<script src="scripts.js"></script>
 </head>
 
 <body>
+	<button id="toggleBtn" onclick="toggleMode()" title="Light/Dark Mode Toggle"></button>
+
 	<header>
 		<div id="topstrip">
 			<h1 id="name"><a href="#">sara j. wallén</a></h1>
@@ -96,15 +100,15 @@
 	<div id="gocontact" class="anchor"></div>
 
 	<main id="content">
-		<section title="Introduction" id="intro">
+		<section aria-label="Introduction" id="intro">
 			<h2><a href="#gointro">Sara</a></h2>
 			<article>
 				<h3>Hi! Welcome :)</h3>
 				<div class="welcome">
 					<div class="blurb">
 						<p>I am a techy person with a front end develop&shy;ment 'Schwer&shy;punkt'.</p>
-						<p>This site is hand-coded in HTML & CSS.</p>
-						<p>I am also currently building and slowly popu&shy;lating <a
+						<p>This site is hand-coded in HTML & CSS (with JS for the light/dark mode <a onclick="toggleMode()">toggle</a>).</p>
+						<p>I have also built and am slowly popu&shy;lating <a
 								href="https://blog.sarawallen.com/" target="_blank">blog.sarawallen.com</a> using
 							SvelteKit.
 						</p>
@@ -116,7 +120,7 @@
 				</p>
 			</article>
 		</section>
-		<section title="Portfolio, Blog & Skills" id="stuff">
+		<section aria-label="Portfolio, Blog & Skills" id="stuff">
 			<h2><a href="#gostuff">Stuff</a></h2>
 			<article>
 				<div class="subdivision">
@@ -141,35 +145,52 @@
 					<div class="stack">
 						<img class="logo" src="images/html-5.svg" alt="HTML5" title="HTML5" loading="lazy">
 						<img class="logo" src="images/css-3.svg" alt="CSS3" title="CSS3" loading="lazy">
-						<img class="logo" src="images/javascript.svg" alt="JS" title="JS" loading="lazy">
-						<img class="logo" src="images/svelte-icon.svg" alt="Svelte" title="Svelte" loading="lazy">
-						<img class="logo" src="images/git-icon.svg" alt="Git" title="Git" loading="lazy">
-						<div class="flex-break"></div>
+						<img class="logo" src="images/javascript.svg" alt="JavaScript" title="JavaScript" loading="lazy">
+						<img class="logo" src="images/typescript-icon.svg" alt="TypeScript" title="TypeScript" loading="lazy">
 						<img class="logo" src="images/php-alt.svg" alt="PHP" title="PHP" loading="lazy">
+						<img class="logo" src="images/react.svg" alt="React" title="React" loading="lazy">
+						<img class="logo" src="images/nextjs-icon.svg" alt="Next.js" title="Next.js" loading="lazy">
+						<img class="logo" src="images/svelte-icon.svg" alt="Svelte" title="Svelte" loading="lazy">
+						<img class="logo" src="images/prisma.svg" alt="Prisma" title="Prisma" loading="lazy">
+						<img class="logo" src="images/tailwindcss-icon.svg" alt="Tailwind CSS" title="Tailwind CSS" loading="lazy">
+						<img class="logo" src="images/git-icon.svg" alt="Git" title="Git" loading="lazy">
+						<img class="logo" src="images/postgresql.svg" alt="PostgreSQL" title="PostgreSQL" loading="lazy">
 						<img class="logo" src="images/mysql-icon.svg" alt="MySQL" title="MySQL" loading="lazy">
 						<img class="logo" src="images/powershell.svg" alt="PowerShell" title="PowerShell" loading="lazy">
 						<img class="logo" src="images/bash-icon.svg" alt="Bash" title="Bash" loading="lazy">
-						<img class="logo" src="images/vba.png" alt="VBA" title="VBA" loading="lazy">
+						<!-- <img class="logo" src="images/vba.png" alt="VBA" title="VBA" loading="lazy"> -->
 					</div>
 				</div>
 			</article>
 		</section>
-		<section title="Contact" id="contact">
+		<section aria-label="Contact" id="contact">
 			<h2><a href="#gocontact">Social</a></h2>
 			<article>
 				<h3>Find me on:</h3>
 				<ul>
-					<li><a class="img" href="https://twitter.com/sarajwallen" target="_blank"><img class="social"
-								src="images/twitter.svg" alt="Twitter" loading="lazy">
+					<li>
+						<a class="img" href="https://twitter.com/sarajwallen" target="_blank"><img class="social"
+								src="images/twitter.svg" alt="Twitter" title="Twitter" loading="lazy">
 							<br>@sarajwallen</a></li>
-					<li><a class="img" href="https://github.com/sarajw" target="_blank"><img class="social"
-								src="images/github.svg" alt="GitHub" loading="lazy">
+					<li>
+						<a class="img" href="https://github.com/sarajw" target="_blank"><img class="social"
+								src="images/github.svg" alt="GitHub" title="GitHub" loading="lazy">
 							<br>/sarajw</a></li>
-					<li><a class="img" href="https://www.linkedin.com/in/sarawallen/" target="_blank"><img
-								class="social" src="images/linkedin.svg" alt="LinkedIn" loading="lazy">
+					<li>
+						<a class="img" href="https://codepen.io/sarajw" target="_blank"><img class="social"
+								src="images/codepen-icon.svg" alt="CodePen" title="CodePen" loading="lazy">
+							<br>/sarajw</a></li>
+					<li>
+						<a class="img" href="https://sarajw.hashnode.dev/" target="_blank"><img class="social"
+								src="images/hashnode-icon.svg" alt="hashnode" title="hashnode" loading="lazy">
+							<br>sarajw.</a></li>
+					<li>
+						<a class="img" href="https://www.linkedin.com/in/sarawallen/" target="_blank"><img
+								class="social" src="images/linkedin.svg" alt="LinkedIn" title="LinkedIn" loading="lazy">
 							<br>/sarawallen</a></li>
-					<li><a class="img" href="https://xing.to/sarajw" target="_blank"><img class="social"
-								src="images/xing.svg" alt="XING" loading="lazy">
+					<li>
+						<a class="img" href="https://xing.to/sarajw" target="_blank"><img class="social"
+								src="images/xing.svg" alt="XING" title="XING" loading="lazy">
 							<br>xing.to/sarajw</a></li>
 				</ul>
 			</article>
