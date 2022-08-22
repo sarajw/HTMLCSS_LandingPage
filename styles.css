@@ -375,7 +375,7 @@ img:not(.social, .logo) {
 	max-width: 360px;
 	max-height: 40vh;
 	position: relative;
-	transition: translate 0.25s;
+	transition: transform 0.25s;
 }
 .thumb:hover {
 	transform: translate(1px, 1px);
@@ -448,7 +448,7 @@ img:not(.social, .logo) {
 	height: clamp(2rem, 4vw + 1.5rem, 4rem);
 	width: auto;
 	opacity: 0.75;
-	transition: opacity 0.25s, translate 0.25s;
+	transition: opacity 0.25s, transform 0.25s;
 }
 .social:hover {
 	transform: translate(1px, 1px);
