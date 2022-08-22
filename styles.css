@@ -4,10 +4,8 @@ html {
 	--bgcolourHS: 0,0%;
 
 	/* colours  */
-	--background: hsl(var(--popcolourHS), 70%);
-	
-	--links: hsl(var(--bgcolourHS), 30%);
-	--hover: hsl(var(--bgcolourHS), 50%);
+/* 	--background: hsl(var(--popcolourHS), 70%);
+
 	--hoverpop: hsl(var(--popcolourHS), 50%);
 	
 	--header: hsl(var(--bgcolourHS), 100%);
@@ -15,24 +13,16 @@ html {
 	--stuff: hsl(var(--bgcolourHS), 90%);
 	--contact: hsl(var(--bgcolourHS), 85%);
 	
-	--headerpop: hsl(var(--popcolourHS), 90%);
-	--intropop: hsl(var(--popcolourHS), 80%);
-	--stuffpop: hsl(var(--popcolourHS), 70%);
-	--contactpop: hsl(var(--popcolourHS), 60%);
-	
-	--scrollbg: hsl(var(--bgcolourHS), 85%);
 	--scrollbar: hsl(var(--bgcolourHS), 75%);
-	--scrollhover: hsl(var(--bgcolourHS), 70%);
+	--scrollhover: hsl(var(--bgcolourHS), 70%); */
 	
-	--b2top: hsl(var(--popcolourHS), 60%);
+	/* fonts */
+/* 	--normal: 400;
+	--heavy: 600;	 */
 
 	/* scaling */
 	--tabheight: clamp(40px, 8vw, 60px);
 	--border-radii: 0.4rem;
-	
-	/* fonts */
-	--normal: 400;
-	--heavy: 600;	
 
     --h0: clamp(1.8rem, 6.5vmin, 2.5rem);
     --h1: clamp(1.5rem, 6vmin, 2rem);
@@ -45,31 +35,102 @@ html {
 html.dark-mode {
 	
 	/* Dark */
-	--background: hsl(var(--popcolourHS), 30%);
+/* 	--background: hsl(var(--popcolourHS), 40%);
 	
-	--links: hsl(var(--bgcolourHS), 90%);
-	--hover: hsl(var(--bgcolourHS), 70%);
 	--hoverpop: hsl(var(--popcolourHS), 50%);
 	
 	--header: hsl(var(--bgcolourHS), 0%);
 	--intro: hsl(var(--bgcolourHS), 10%);
 	--stuff: hsl(var(--bgcolourHS), 17.5%);
 	--contact: hsl(var(--bgcolourHS), 25%);
-	
-	--headerpop: hsl(var(--popcolourHS), 10%);
-	--intropop: hsl(var(--popcolourHS), 20%);
-	--stuffpop: hsl(var(--popcolourHS), 30%);
-	--contactpop: hsl(var(--popcolourHS), 40%);
-	
-	--scrollbg: hsl(var(--bgcolourHS), 30%);
+
 	--scrollbar: hsl(var(--bgcolourHS), 40%);
-	--scrollhover: hsl(var(--bgcolourHS), 50%);
-	
-	--b2top: hsl(var(--popcolourHS), 40%);
+	--scrollhover: hsl(var(--bgcolourHS), 50%); */
 	
 	/* fonts */
-	--normal: 300;
-	--heavy: 500;	
+/* 	--normal: 300;
+	--heavy: 500;	 */
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+		/* colours  */
+		--background: hsl(var(--popcolourHS), 70%);
+		--hoverpop: hsl(var(--popcolourHS), 50%);
+		
+		--header: hsl(var(--bgcolourHS), 100%);
+		--intro: hsl(var(--bgcolourHS), 95%);
+		--stuff: hsl(var(--bgcolourHS), 90%);
+		--contact: hsl(var(--bgcolourHS), 85%);
+		
+		--scrollbar: hsl(var(--bgcolourHS), 75%);
+		--scrollhover: hsl(var(--bgcolourHS), 70%);
+		
+		/* fonts */
+		--normal: 400;
+		--heavy: 600;	
+	}
+
+	:root:has(#toggle:checked) {
+		color-scheme: dark;
+		/* Dark */
+		--background: hsl(var(--popcolourHS), 40%);
+		--hoverpop: hsl(var(--popcolourHS), 50%);
+		
+		--header: hsl(var(--bgcolourHS), 0%);
+		--intro: hsl(var(--bgcolourHS), 10%);
+		--stuff: hsl(var(--bgcolourHS), 17.5%);
+		--contact: hsl(var(--bgcolourHS), 25%);
+
+		--scrollbar: hsl(var(--bgcolourHS), 40%);
+		--scrollhover: hsl(var(--bgcolourHS), 50%);
+		
+		/* fonts */
+		--normal: 300;
+		--heavy: 500;	
+	}
+}
+
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		/* Dark */
+		--background: hsl(var(--popcolourHS), 40%);
+		--hoverpop: hsl(var(--popcolourHS), 50%);
+		
+		--header: hsl(var(--bgcolourHS), 0%);
+		--intro: hsl(var(--bgcolourHS), 10%);
+		--stuff: hsl(var(--bgcolourHS), 17.5%);
+		--contact: hsl(var(--bgcolourHS), 25%);
+
+		--scrollbar: hsl(var(--bgcolourHS), 40%);
+		--scrollhover: hsl(var(--bgcolourHS), 50%);
+		
+		/* fonts */
+		--normal: 300;
+		--heavy: 500;	
+	}
+
+	:root:has(#toggle:checked) {
+		color-scheme: light;
+		/* colours  */
+		--background: hsl(var(--popcolourHS), 70%);
+		--hoverpop: hsl(var(--popcolourHS), 50%);
+		
+		--header: hsl(var(--bgcolourHS), 100%);
+		--intro: hsl(var(--bgcolourHS), 95%);
+		--stuff: hsl(var(--bgcolourHS), 90%);
+		--contact: hsl(var(--bgcolourHS), 85%);
+		
+		--scrollbar: hsl(var(--bgcolourHS), 75%);
+		--scrollhover: hsl(var(--bgcolourHS), 70%);
+		
+		/* fonts */
+		--normal: 400;
+		--heavy: 600;	
+	}
 }
 
 * {
@@ -95,21 +156,21 @@ body {
 }
 
 a {
-	color: var(--links);
+	color: CanvasText;
 	text-decoration: none;
 }
 a:not(#topstrip a, section h2 a, .img, .thumb a) {
     /* border-bottom: 1px solid var(--sopranopop); */
-		text-decoration: underline 0.15rem var(--contactpop);
+		text-decoration: underline 0.15rem var(--hoverpop);
 }
 a:hover, a:active {
 	color: var(--hoverpop);
 }
 a:not(#topstrip a, section h2 a, .img, .thumb a, .backtotop):hover {
-	text-decoration: underline 0.1rem wavy var(--contactpop);
+	text-decoration: underline 0.1rem wavy var(--hoverpop);
 }
 a:focus-visible, button:focus-visible {
-	outline: 0.1rem dashed var(--hoverpop);
+	outline: 0.2rem dashed var(--hoverpop);
 	outline-offset: 0.25rem;
 	border-radius: var(--border-radii);
 }
@@ -318,7 +379,7 @@ img:not(.social, .logo) {
 	left: calc(50% - 1.5rem);
 	text-align: center;
 	border-radius: 50%;
-	background-color: var(--b2top);
+	background-color: var(--background);
 }
 .backtotop img {
 	height: 2rem;

@@ -28,8 +28,13 @@
 </head>
 
 <body>
-	<button id="toggleBtn" onclick="toggleMode()" title="Light/Dark Mode Toggle"></button>
+	
+	<label for="toggle" class="mode-toggle">
+		<input type="checkbox" id="toggle" />
+		<span>Light/Dark</span>
+	</label>
 
+	<button id="toggleBtn" onclick="toggleMode()" title="Light/Dark Mode Toggle"></button>
 	<header>
 		<div id="topstrip">
 			<h1 id="name"><a href="#">sara j. wallén</a></h1>
