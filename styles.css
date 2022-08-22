@@ -5,9 +5,6 @@ html {
 
 	/* colours  */
 	--background: hsl(var(--popcolourHS), 70%);
-	
-	--links: hsl(var(--bgcolourHS), 30%);
-	--hover: hsl(var(--bgcolourHS), 50%);
 	--hoverpop: hsl(var(--popcolourHS), 50%);
 	
 	--header: hsl(var(--bgcolourHS), 100%);
@@ -15,16 +12,8 @@ html {
 	--stuff: hsl(var(--bgcolourHS), 90%);
 	--contact: hsl(var(--bgcolourHS), 85%);
 	
-	--headerpop: hsl(var(--popcolourHS), 90%);
-	--intropop: hsl(var(--popcolourHS), 80%);
-	--stuffpop: hsl(var(--popcolourHS), 70%);
-	--contactpop: hsl(var(--popcolourHS), 60%);
-	
-	--scrollbg: hsl(var(--bgcolourHS), 85%);
 	--scrollbar: hsl(var(--bgcolourHS), 75%);
 	--scrollhover: hsl(var(--bgcolourHS), 70%);
-	
-	--b2top: hsl(var(--popcolourHS), 60%);
 
 	/* scaling */
 	--tabheight: clamp(40px, 8vw, 60px);
@@ -46,9 +35,6 @@ html.dark-mode {
 	
 	/* Dark */
 	--background: hsl(var(--popcolourHS), 30%);
-	
-	--links: hsl(var(--bgcolourHS), 90%);
-	--hover: hsl(var(--bgcolourHS), 70%);
 	--hoverpop: hsl(var(--popcolourHS), 50%);
 	
 	--header: hsl(var(--bgcolourHS), 0%);
@@ -56,16 +42,8 @@ html.dark-mode {
 	--stuff: hsl(var(--bgcolourHS), 17.5%);
 	--contact: hsl(var(--bgcolourHS), 25%);
 	
-	--headerpop: hsl(var(--popcolourHS), 10%);
-	--intropop: hsl(var(--popcolourHS), 20%);
-	--stuffpop: hsl(var(--popcolourHS), 30%);
-	--contactpop: hsl(var(--popcolourHS), 40%);
-	
-	--scrollbg: hsl(var(--bgcolourHS), 30%);
 	--scrollbar: hsl(var(--bgcolourHS), 40%);
 	--scrollhover: hsl(var(--bgcolourHS), 50%);
-	
-	--b2top: hsl(var(--popcolourHS), 40%);
 	
 	/* fonts */
 	--normal: 300;
@@ -95,21 +73,21 @@ body {
 }
 
 a {
-	color: var(--links);
+	color: CanvasText;
 	text-decoration: none;
 }
-a:not(#topstrip a, section h2 a, .img, .thumb a) {
+a:not(#topstrip a, section h2 a, .img, .thumb a), #inline-toggle {
     /* border-bottom: 1px solid var(--sopranopop); */
-		text-decoration: underline 0.15rem var(--contactpop);
+		text-decoration: underline 0.15rem var(--hoverpop);					
 }
-a:hover, a:active {
+a:hover, a:active, #inline-toggle:hover, #inline-toggle:active{
 	color: var(--hoverpop);
 }
-a:not(#topstrip a, section h2 a, .img, .thumb a, .backtotop):hover {
-	text-decoration: underline 0.1rem wavy var(--contactpop);
+a:not(#topstrip a, section h2 a, .img, .thumb a, .backtotop):hover, #inline-toggle:hover {
+	text-decoration: underline 0.1rem wavy CanvasText;
 }
 a:focus-visible, button:focus-visible {
-	outline: 0.1rem dashed var(--hoverpop);
+	outline: 0.2rem dashed var(--hoverpop);
 	outline-offset: 0.25rem;
 	border-radius: var(--border-radii);
 }
@@ -123,25 +101,37 @@ a:focus-visible, button:focus-visible {
 	height: calc(2rem + 1vw);
 	opacity: 0.75;
 	background-color: transparent;
-	background-image: url('images/led-off.svg');
+	background-image: url('images/led-on.svg');
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: contain;
 }
 
+#toggleBtn:focus-visible {
+	opacity: 1;
+}
+
 .dark-mode #toggleBtn {
-	background-image: url('images/led-on.svg');
+	background-color: var(--info);
+	background-image: url('images/led-off.svg');
 	filter: invert(100%);
+	transition: background-image 0.5s;
 }
 
 @media (hover: hover) {
 	#toggleBtn {
-		opacity: 0.25;
+		opacity: 0.50;
 		transition: opacity 0.25s;
 	}
 	#toggleBtn:hover {
 		opacity: 0.75;
 	}
+}
+
+#inline-toggle {
+	background-color: transparent;
+	font-size: clamp(0.8rem, 2vw + 0.5rem, 1.2rem);
+	font-family: 'Karla', sans-serif;
 }
 
 header {
@@ -318,7 +308,7 @@ img:not(.social, .logo) {
 	left: calc(50% - 1.5rem);
 	text-align: center;
 	border-radius: 50%;
-	background-color: var(--b2top);
+	background-color: var(--background);
 }
 .backtotop img {
 	height: 2rem;
